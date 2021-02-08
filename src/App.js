@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { ShopPage } from './pages/shop/shop.component';
 import { Header } from './components/header/header.component';
 import SignInAndSignUp from './pages/signin-and-signup/signin-and-signup.component'
-import { auth } from './firebase/firebase.util'
+import { auth, createUserProfileDocument } from './firebase/firebase.util'
 
 class App extends Component {
     constructor() {
@@ -19,7 +19,8 @@ class App extends Component {
 
     componentDidMount() {
         this.unsupcribeFromAuth = auth.onAuthStateChanged(user => {
-            this.setState({ currentUser: user })
+            // this.setState({ currentUser: user })
+            createUserProfileDocument(user)
         })
     }
 
