@@ -38,21 +38,21 @@ export class SignIn extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Email</label>
                     <FormInput
-                        name='email' 
+                        name='email'
                         type='email'
                         label='email'
                         value={this.state.email}
-                        handleChange={this.handleChange} 
+                        handleChange={this.handleChange}
                         required />
                     <label>Password</label>
-                    <FormInput 
-                        name='password' 
-                        type='password' 
+                    <FormInput
+                        name='password'
+                        type='password'
                         label='password'
                         value={this.state.password}
-                        handleChange={this.handleChange} 
+                        handleChange={this.handleChange}
                         required />
-                        
+
                     <div className='buttons'>
                         <CustomButton type='submit'>Sign In</CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
