@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { HomePage } from './pages/homepage/homepage.component';
 import './App.css';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { ShopPage } from './pages/shop/shop.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.util'
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.action';
@@ -11,6 +10,7 @@ import SignInAndSignUpPage from './pages/signin-and-signup/signin-and-signup.com
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect'
 import CheckoutPage from './components/checkout/checkout.component';
+import ShopPage from './pages/shop/shop.component'
 class App extends Component {
     constructor() {
         super()
