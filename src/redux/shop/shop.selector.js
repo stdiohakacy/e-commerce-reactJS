@@ -18,8 +18,13 @@ export const selectCollections = createSelector(
 export const selectCollection = collectionUrlParam => {
     return createSelector(
         [selectCollections],
-        collections => collections.find(
-            collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
-        )
+        // collections => {
+        //     return collections.find(
+        //         collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
+        //     )
+        // }
+        collections => {
+            return collections.find(collection => collection.routeName === collectionUrlParam)
+        }
     )
 }
